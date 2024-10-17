@@ -26,9 +26,38 @@
 
 .navigationButtons {
     position: absolute;
-    top: 45%; /* Adjust as needed */
-    left: 50%; /* Adjust as needed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
     display: flex;
     gap: 10px; /* Space between buttons */
+}
+
+.navigationButtons button {
+    background-color: #fff; /* Common color */
+    border-radius: 5px; /* Common shape */
+    padding: 10px 20px; /* Common padding */
+    border: none;
+    cursor: pointer;
+}
+
+.navigationButton1 {
+    position: absolute;
+    top: -50px; /* Adjust as needed */
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.navigationButton2 {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: -50px; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+}
+
+.navigationButton3 {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    transform: translate(-50%, -50%);
 }
