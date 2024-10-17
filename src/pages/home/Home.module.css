@@ -1,16 +1,34 @@
-.headline {
-    font-size: 2rem;
-    font-weight: 700;
-    color: aqua;
-}
-
 .background {
-    background: linear-gradient(to top, black, lightgray);
+    background-color: rgb(18, 18, 18);
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .splineContainer {
-    height: 100%;
-    width: 100%;
+    position: relative;
+}
+
+.invisibleButton {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.navigationButtons {
+    position: absolute;
+    top: 45%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px; /* Space between buttons */
 }
