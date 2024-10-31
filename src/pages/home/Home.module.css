@@ -1,0 +1,93 @@
+.background {
+    background: #1755b2;
+    height: 100vh;
+}
+
+.box {
+    border: 2px solid white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    right: 25%;
+    bottom: 5%;
+
+}
+
+.topBox {
+    border: 2px solid white;
+    background-color: transparent;
+    align-content: center;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.name {
+    font-family: 'Brulia', sans-serif;
+    font-size: 190px;
+    color: White;
+    display: flex;
+    justify-content: center;
+}
+
+.nameSub {
+    font-family: 'Brulia', sans-serif;
+    font-size: 50px;
+    color: White;
+    display: flex;
+    justify-content: center;
+}
+
+.bottomBox {
+    border: 2px solid white;
+    background-color: transparent;
+    align-content: center;
+    height: 39%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.figureBox {
+    border-right: 2px solid white;
+    background-color: transparent;
+    align-content: center;
+    width: 25%;
+}
+
+.figure {
+    display: flex;
+    justify-content: center;
+}
+
+.figureText {
+    font-family: 'Brulia', sans-serif;
+    font-size: 50px;
+    color: White;
+    display: flex;
+    justify-content: center;
+}
+
+.secondaryBox {
+    border-left: 2px solid white;
+    background-color: transparent;
+    align-content: center;
+    width: 75%;
+}
+
+.secondaryText {
+    font-family: 'Brulia', sans-serif;
+    font-size: 50px;
+    color: White;
+    display: flex;
+    justify-content: center;
+}
