@@ -60,21 +60,40 @@
 .figureBox {
     border-right: 2px solid white;
     background-color: transparent;
-    align-content: center;
     width: 25%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .figure {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.figureText {
+.figureTextOne {
     font-family: 'Brulia', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     color: White;
     display: flex;
-    justify-content: center;
+    transform: rotate(90deg);
+    transform-origin: left center;
+    position: absolute;
+    left: 0;
+    padding-bottom: 50px;
+    margin-top: -270px;
+}
+
+.figureTextTwo {
+    font-family: 'Brulia', sans-serif;
+    font-size: 40px;
+    color: White;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    padding-left: 225px;
 }
 
 .secondaryBox {
