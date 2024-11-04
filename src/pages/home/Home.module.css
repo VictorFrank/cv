@@ -27,11 +27,12 @@
     top: 0;
     left: 0;
     right: 0;
+    cursor: pointer;
 }
 
 .name {
     font-family: 'Brulia', sans-serif;
-    font-size: 190px;
+    font-size: 200px;
     color: White;
     display: flex;
     justify-content: center;
@@ -101,12 +102,49 @@
     background-color: transparent;
     align-content: center;
     width: 75%;
-}
 
-.secondaryText {
-    font-family: 'Brulia', sans-serif;
-    font-size: 50px;
-    color: White;
-    display: flex;
-    justify-content: center;
+    .secondaryText {
+        font-family: 'Brulia', sans-serif;
+        font-size: 160px;
+        color: White;
+        display: flex;
+        justify-content: center;
+        border-bottom: 4px solid white;
+        line-height: 0.9;
+    }
+
+    .microBox {
+        display: flex;
+        flex-direction: row;
+
+        .microText {
+            width: 100%;
+
+            .tertiaryText {
+                font-family: 'Brulia', sans-serif;
+                font-size: 52px;
+                color: White;
+                display: flex;
+                justify-content: center;
+                border-bottom: 3px solid white;
+            }
+
+            .smallText {
+                font-family: 'Brulia', sans-serif;
+                font-size: 52px;
+                color: White;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .microImage {
+            display: flex;
+            border-left: 4px solid white;
+            width: 200px;
+            margin-left: auto;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }

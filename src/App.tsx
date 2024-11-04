@@ -8,12 +8,10 @@ const App: React.FC = () => {
     return (
         <Router>
             <div>
-                {/*Header navigator here*/}
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                 </Routes>
-                {/*Footer here*/}
             </div>
         </Router>
     );
