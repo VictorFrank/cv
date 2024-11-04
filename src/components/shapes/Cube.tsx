@@ -4,12 +4,12 @@ import './Cube.css';
 const Cube = () => {
     return (
         <div className="cube">
-            <div className="face front">Background</div>
+            <div className="face front">Music</div>
             <div className="face back"></div>
-            <div className="face left">Hobbies</div>
-            <div className="face right">Hobbies</div>
-            <div className="face top">Education</div>
-            <div className="face bottom">Education</div>
+            <div className="face left">Games</div>
+            <div className="face right">Games</div>
+            <div className="face top">CTF</div>
+            <div className="face bottom">CTF</div>
         </div>
     );
 };
