@@ -1,15 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import styles from './Home.module.css';
 import Cube from '../../components/shapes/Cube';
 import PythonLogo from '../../components/shapes/PythonLogo'
 
 const Home: React.FC = () => {
+    const navigate = useNavigate()
+
+    function navigateTo(path: string) {
+        navigate(path)
+    }
 
     return (
         <div className={styles.background}>
             <div className={styles.box}>
                 <div className={styles.topBox}>
-                    <div className={styles.name}>Victor Frank</div>
+                    <div className={styles.name} onClick={() => navigateTo('/about')}>Victor Frank</div>
                     <div className={styles.nameSub}>Master's degree ––––––– Software Engineering</div>
                 </div>
                 <div className={styles.bottomBox}>

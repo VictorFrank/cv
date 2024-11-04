@@ -27,6 +27,7 @@
     top: 0;
     left: 0;
     right: 0;
+    cursor: pointer;
 }
 
 .name {
@@ -121,7 +122,7 @@
 
             .tertiaryText {
                 font-family: 'Brulia', sans-serif;
-                font-size: 50px;
+                font-size: 52px;
                 color: White;
                 display: flex;
                 justify-content: center;
@@ -130,7 +131,7 @@
 
             .smallText {
                 font-family: 'Brulia', sans-serif;
-                font-size: 50px;
+                font-size: 52px;
                 color: White;
                 display: flex;
                 justify-content: center;
