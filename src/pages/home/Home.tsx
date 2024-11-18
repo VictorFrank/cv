@@ -21,7 +21,7 @@ const Home: React.FC = () => {
                 <div className={styles.bottomBox}>
                     <div className={styles.figureBox}>
                         <div className={styles.figureTextOne}>Hobbies</div>
-                        <div className={styles.figure}>
+                        <div className={styles.figure} onClick={() => navigateTo('/hobbies')}>
                             <Cube />
                         </div>
                         <div className={styles.figureTextTwo}>My</div>
@@ -32,10 +32,6 @@ const Home: React.FC = () => {
                             <div className={styles.microText}>
                                 <div className={styles.tertiaryText}>Key skills</div>
                                 <div className={styles.smallText}>Experience & Projects</div>
-                                <div className={styles.smallTextLine1}></div>
-                                <div className={styles.smallTextLine2}></div>
-                                <div className={styles.smallTextLine3}></div>
-                                <div className={styles.smallTextLine4}></div>
                             </div>
                             <div className={styles.microImage}>
                                 <PythonLogo />
