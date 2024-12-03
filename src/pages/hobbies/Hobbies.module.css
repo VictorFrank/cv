@@ -1,0 +1,22 @@
+.background {
+    background: #1755b2;
+    height: 100vh;
+}
+
+.frame {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    bottom: 5%;
+    top: 5%;
+    left: 0;
+    right: 0;
+}
+
+.box {
+    border: 4px solid white;
+    background-color: transparent;
+    width: 400px;
+    height: 760px;
+}
