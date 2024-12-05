@@ -41,11 +41,21 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.helix}>
-                <RotatingLine />
-            </div>
-            <div className={styles.triangles}>
-                <RotatingTriangle />
+            <div className={styles.rightSide}>
+                <div className={styles.figureContainer}>
+                    <div className={styles.helix}>
+                        <RotatingLine/>
+                    </div>
+                    <div className={styles.triangles}>
+                        <RotatingTriangle/>
+                    </div>
+                </div>
+                <div className={styles.bottomNumber}>
+                    <span>2</span>
+                    <span>0</span>
+                    <span>2</span>
+                    <span>4</span>
+                </div>
             </div>
         </div>
     );
