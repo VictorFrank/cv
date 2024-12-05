@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import styles from './Home.module.css';
 import Cube from '../../components/shapes/Cube';
+import {RotatingLine, RotatingTriangle} from "../../components/shapes/RotatingThing";
 import PythonLogo from '../../components/shapes/PythonLogo'
 
 const Home: React.FC = () => {
@@ -39,6 +40,12 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={styles.helix}>
+                <RotatingLine />
+            </div>
+            <div className={styles.triangles}>
+                <RotatingTriangle />
             </div>
         </div>
     );

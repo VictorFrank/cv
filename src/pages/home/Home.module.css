@@ -1,6 +1,24 @@
 .background {
     background: #1755b2;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.helix {
+    position: absolute;
+    right: 18%;
+    top: 5%;
+    bottom: 5%;
+    color: #FFFFFF;
+}
+
+.triangles {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    color: #FFFFFF;
 }
 
 .box {
