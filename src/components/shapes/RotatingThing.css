@@ -1,0 +1,44 @@
+.rotating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rotating-line {
+    height: 100px;
+    background-color: transparent;
+    border: #FFFFFF 5px solid;
+    animation: rotateLine 7s linear infinite;
+    margin-bottom: -100px;
+    transform-origin: center;
+    transform: rotateX(75deg);
+}
+
+@keyframes rotateLine {
+    from {
+        transform: rotateX(75deg) rotate(0deg);
+    }
+    to {
+        transform: rotateX(75deg) rotate(-360deg);
+    }
+}
+
+.rotating-triangle {
+    width: 0;
+    border-left: 50px solid transparent; /* Left side of the triangle */
+    border-right: 50px solid transparent; /* Right side of the triangle */
+    border-bottom: 100px solid #FFFFFF; /* Bottom side to form the triangle */
+    animation: rotateTriangle 10s linear infinite;
+    margin-bottom: -90px;
+    transform-origin: center;
+    transform: rotateX(75deg);
+}
+
+@keyframes rotateTriangle {
+    from {
+        transform: rotateX(75deg) rotate(0deg);
+    }
+    to {
+        transform: rotateX(75deg) rotate(360deg);
+    }
+}

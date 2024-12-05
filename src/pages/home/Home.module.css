@@ -1,7 +1,48 @@
 .background {
     background: #1755b2;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
 }
+
+.rightSide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .figureContainer {
+        color: #FFFFFF;
+        .helix {
+            position: absolute;
+            right: 18%;
+            top: 5%;
+            bottom: 5%;
+        }
+
+        .triangles {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            bottom: 5%;
+        }
+    }
+}
+
+.bottomNumber {
+    position: absolute;
+    font-family: 'Brulia', sans-serif;
+    font-size: 110px;
+    color: #FFFFFF;
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    top: 675px;
+    left: 1310px;
+}
+
 
 .box {
     border: 2px solid white;
