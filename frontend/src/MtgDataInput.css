@@ -1,0 +1,72 @@
+
+.centeredContainer {
+    width: 1000px;
+}
+
+.playerNumberInput {
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.playerNameContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 20px;
+    margin-bottom: 50px;
+    .individualPlayer {
+        display: flex;
+        flex-direction: column;
+        width: 490px;
+    }
+}
+
+.commanderNameContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 20px;
+    margin-bottom: 50px;
+    .individualCommander {
+        display: flex;
+        flex-direction: column;
+        width: 490px;
+    }
+}
+
+.gameStartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 20px;
+    margin-bottom: 50px;
+    .individualGameStart {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+    }
+}
+
+.gameEndContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 20px;
+    margin-bottom: 50px;
+    .individualGameEnd {
+        display: flex;
+        flex-direction: column;
+        width: 490px;
+    }
+}
+
+.submitButton {
+    margin-bottom: 50px;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
