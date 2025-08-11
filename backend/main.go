@@ -1,13 +1,15 @@
 package main
 
 import (
-   "fmt"
-   "net/http"
+	"github.com/joho/godotenv"
+	"log"
 )
 
 func main() {
-   http.HandleFunc("/api/hello", func(w http.ResponseWriter, r *http.Request) {fmt.Fprint(w, "Hello from Go backend!")})
+	err := godotenv.Load("../.env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 
-   fmt.Println("Backend listening on :8080")
-   http.ListenAndServe(":8080", nil)
+	initDB()
 }
