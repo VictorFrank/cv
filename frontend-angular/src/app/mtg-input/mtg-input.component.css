@@ -1,0 +1,15 @@
+.playerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    gap: 10px;
+}
