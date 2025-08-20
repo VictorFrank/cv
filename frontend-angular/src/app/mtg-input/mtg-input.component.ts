@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-mtg-input',
   standalone: true,
-  imports: [FormsModule],
+    imports: [FormsModule, NgIf],
   templateUrl: './mtg-input.component.html',
   styleUrl: './mtg-input.component.css'
 })
@@ -32,6 +33,15 @@ export class MtgInputComponent {
 
     printFormData() {
         console.log(this.mtgFormData);
+    }
+
+    handlePlayerNumberChange(event: number): void {
+        this.playerNumber = event
+        console.log(`Player number changed to: ${this.playerNumber}`);
+    }
+
+    submitForm(): void {
+        console.log('Form submitted with data:', this.mtgFormData);
     }
 
 }
