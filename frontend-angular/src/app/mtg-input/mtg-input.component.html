@@ -1,13 +1,15 @@
-<div>
-    <h1>MTG Data Input</h1>
-    <p>After a game, put in the game info. Will be used for later data visualization.</p>
-    <form>
+<div class="background">
+    <div class="headline">
+        <h1>MTG Data Input</h1>
+        <p>After a game, put in the game info. Will be used for later data visualization.</p>
+    </div>
+    <form class="formContainer">
         <div class="inputContainer">
             <label for="playerNumber">Number of Players:</label>
-            <input type="number" id="playerNumber" [(ngModel)]="playerNumber" name="playerNumber" required>
+            <input type="number" id="playerNumber" [(ngModel)]="playerNumber" name="playerNumber" (ngModelChange)="handlePlayerNumberChange(playerNumber)" required>
         </div>
-        <div class="playerContainer">
-            <div class="player1Container">
+        <div class="partContainer">
+            <div class="individualPlayerContainer">
                 <div class="inputContainer">
                     <label for="player1">Player 1:</label>
                     <input type="text" id="player1" [(ngModel)]="mtgFormData.player1" name="player1" required>
@@ -18,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="player2Container">
+            <div class="individualPlayerContainer">
                 <div class="inputContainer">
                     <label for="player2">Player 2:</label>
                     <input type="text" id="player2" [(ngModel)]="mtgFormData.player2" name="player2" required>
@@ -29,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="player3Container">
+            <div class="individualPlayerContainer" *ngIf="playerNumber >= 3">
                 <div class="inputContainer">
                     <label for="player3">Player 3:</label>
                     <input type="text" id="player3" [(ngModel)]="mtgFormData.player3" name="player3">
@@ -40,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="player4Container">
+            <div class="individualPlayerContainer" *ngIf="playerNumber >= 4">
                 <div class="inputContainer">
                     <label for="player4">Player 4:</label>
                     <input type="text" id="player4" [(ngModel)]="mtgFormData.player4" name="player4">
@@ -51,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="player5Container">
+            <div class="individualPlayerContainer" *ngIf="playerNumber >= 5">
                 <div class="inputContainer">
                     <label for="player5">Player 5:</label>
                     <input type="text" id="player5" [(ngModel)]="mtgFormData.player5" name="player5">
@@ -63,26 +65,44 @@
             </div>
         </div>
 
-        <label for="startingPlayer">Starting Player:</label>
-        <input type="text" id="startingPlayer" [(ngModel)]="mtgFormData.startingPlayer" name="startingPlayer">
+        <div class="partContainer">
+            <div class="inputContainer">
+                <label for="startingPlayer">Starting Player:</label>
+                <input type="text" id="startingPlayer" [(ngModel)]="mtgFormData.startingPlayer" name="startingPlayer">
+            </div>
+            <div class="inputContainer">
+                <label for="fb">First Blood:</label>
+                <input type="text" id="fb" [(ngModel)]="mtgFormData.fb" name="fb">
+            </div>
+            <div class="inputContainer">
+                <label for="fdeath">First Death:</label>
+                <input type="text" id="fdeath" [(ngModel)]="mtgFormData.fdeath" name="fdeath">
+            </div>
+        </div>
 
-        <label for="fb">First Blood:</label>
-        <input type="text" id="fb" [(ngModel)]="mtgFormData.fb" name="fb">
-
-        <label for="fdeath">First Death:</label>
-        <input type="text" id="fdeath" [(ngModel)]="mtgFormData.fdeath" name="fdeath">
-
-        <label for="gametime">Game Time:</label>
-        <input type="text" id="gametime" [(ngModel)]="mtgFormData.gametime" name="gametime">
-
-        <label for="win">Winner:</label>
-        <input type="text" id="win" [(ngModel)]="mtgFormData.win" name="win">
-
-        <label for="wmethod">Win Method:</label>
-        <input type="text" id="wmethod" [(ngModel)]="mtgFormData.wmethod" name="wmethod">
+        <div class="partContainer">
+            <div class="inputContainer">
+                <label for="gametime">Game Time:</label>
+                <input type="text" id="gametime" [(ngModel)]="mtgFormData.gametime" name="gametime">
+            </div>
+            <div class="inputContainer">
+                <label for="win">Winner:</label>
+                <input type="text" id="win" [(ngModel)]="mtgFormData.win" name="win">
+            </div>
+            <div class="inputContainer">
+                <label for="wmethod">Win Method:</label>
+                <input type="text" id="wmethod" [(ngModel)]="mtgFormData.wmethod" name="wmethod">
+            </div>
+        </div>
     </form>
 
-    <button (click)="printFormData()">
-        Print Form Data
-    </button>
+    <div class="inputBottom">
+        <button (click)="printFormData()">
+            Print Console
+        </button>
+        <button (click)="submitForm()">
+            Submit Form
+        </button>
+    </div>
+
 </div>
