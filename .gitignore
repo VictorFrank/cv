@@ -16,3 +16,5 @@ backend/server
 backend/*.exe
 backend/*.test
 backend/vendor/
+/backend-dotnet/CvBackend/bin
+/backend-dotnet/CvBackend/obj

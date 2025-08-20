@@ -1,4 +1,4 @@
-namespace BackendDotnet;
+namespace CvBackend;
 
 public class WeatherForecast
 {
