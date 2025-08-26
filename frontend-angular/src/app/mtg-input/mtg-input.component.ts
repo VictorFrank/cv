@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import {NgIf} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
+import {response} from "express";
 
 @Component({
   selector: 'app-mtg-input',
@@ -46,6 +47,15 @@ export class MtgInputComponent {
 
     submitForm(): void {
         console.log('Form submitted with data:', this.mtgFormData);
+
+        this.http.post('http://localhost:5234/api/mtgform/submit', this.mtgFormData).subscribe({
+            next: (response) => {
+                console.log('Form data successfully sent to backend:', response);
+            },
+            error: (err) => {
+                console.error('Error sending form data to backend:', err);
+            }
+        })
     }
 
     testBackendCall(): void {
