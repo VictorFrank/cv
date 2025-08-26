@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import {NgIf} from "@angular/common";
+import {HttpClient} from "@angular/common/http";
+import {response} from "express";
 
 @Component({
   selector: 'app-mtg-input',
@@ -10,7 +12,10 @@ import {NgIf} from "@angular/common";
   styleUrl: './mtg-input.component.css'
 })
 export class MtgInputComponent {
+    private apiUrl = 'http://localhost:5234/weatherforecast';
     playerNumber: number = 2;
+
+    constructor(private http: HttpClient) {}
 
     mtgFormData= {
         player1: '',
@@ -42,6 +47,25 @@ export class MtgInputComponent {
 
     submitForm(): void {
         console.log('Form submitted with data:', this.mtgFormData);
+
+        this.http.post('http://localhost:5234/api/mtgform/submit', this.mtgFormData).subscribe({
+            next: (response) => {
+                console.log('Form data successfully sent to backend:', response);
+            },
+            error: (err) => {
+                console.error('Error sending form data to backend:', err);
+            }
+        })
     }
 
+    testBackendCall(): void {
+        this.http.get(this.apiUrl).subscribe({
+            next: (data) => {
+                console.log('Data from backend:', data);
+            },
+            error: (err) => {
+                console.error('Api call error:', err)
+            }
+        });
+    }
 }
