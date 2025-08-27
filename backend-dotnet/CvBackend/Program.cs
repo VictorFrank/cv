@@ -1,4 +1,10 @@
+using DotNetEnv;
+using CvBackend.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+DotNetEnv.Env.Load("../../.env");
 
 // Add services to the container.
 
@@ -15,8 +21,15 @@ builder.Services.AddCors(options=>
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
-}
-);
+});
+
+var connectionString = $"Host=localhost;Port=8001;"+
+                       $"Database={Environment.GetEnvironmentVariable("POSTGRES_DB")};"+
+                       $"Username={Environment.GetEnvironmentVariable("POSTGRES_USER")};"+
+                       $"Password={Environment.GetEnvironmentVariable("POSTGRES_PASSWORD")}";
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
