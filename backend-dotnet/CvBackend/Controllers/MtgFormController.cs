@@ -1,24 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
 using CvBackend.Models;
+using CvBackend.Data;
 
-namespace  CvBackend.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class MtgFormController : ControllerBase
+namespace CvBackend.Controllers
 {
-    [HttpPost("submit")]
-    public IActionResult SubmitForm([FromBody] MtgFormData formData)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class MtgFormController : ControllerBase
     {
-        if (formData == null)
+        private readonly AppDbContext _context;
+        
+        public MtgFormController(AppDbContext context)
         {
-            return BadRequest("Formdata is missing.");
+            _context = context;
         }
 
-        return Ok(new
+        [HttpPost("submit")]
+        public async Task<IActionResult> SubmitForm([FromBody] MtgFormData formData)
         {
-            Message = "Form submitted successfully",
-            Data = formData
-        });
+            if (formData == null)
+                return BadRequest("Form data is null.");
+
+            _context.MtgFormDatas.Add(formData);
+            await _context.SaveChangesAsync();
+            
+            return Ok(new { message = "Form data submitted successfully." });
+        }
     }
 }
