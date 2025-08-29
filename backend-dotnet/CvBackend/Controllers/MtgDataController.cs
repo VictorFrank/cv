@@ -12,7 +12,7 @@ namespace CvBackend.Controllers
         [HttpGet("data")]
         public async Task<IActionResult> GetData()
         {
-            return Ok("GET to fetch data works");
+            return Ok(new { message = "Data endpoint is working." });
         }
     }
 }
