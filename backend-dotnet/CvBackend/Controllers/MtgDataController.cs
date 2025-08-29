@@ -8,7 +8,11 @@ namespace CvBackend.Controllers
     [Route("api/[controller]")]
     public class MtgDataController : ControllerBase
     {
-    
+
         [HttpGet("data")]
+        public async Task<IActionResult> GetData()
+        {
+            return Ok("GET to fetch data works");
+        }
     }
 }
