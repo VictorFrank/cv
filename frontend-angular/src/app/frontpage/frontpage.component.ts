@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-frontpage',
@@ -9,8 +11,10 @@ import { Component } from '@angular/core';
 })
 export class FrontpageComponent {
 
+    constructor(private router: Router) {}
+
     navigateTo(url: string): void {
-        window.location.href = url;
+        this.router.navigate([url])
     }
 
 }
