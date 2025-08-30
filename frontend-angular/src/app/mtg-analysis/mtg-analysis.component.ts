@@ -14,6 +14,7 @@ export class MtgAnalysisComponent implements OnInit{
     constructor(private http: HttpClient) {}
 
     stringData: string = ""
+    mtgData: any = []
 
     mockPlayerStats = [
         { name: 'Player 1', gamesPlayed: 10, wins: 6, losses: 4, winRate: '60%' },
@@ -34,7 +35,7 @@ export class MtgAnalysisComponent implements OnInit{
     ngOnInit(): void {
         console.log("ngOnInit called")
 
-        this.http.get<{message: string}>('http://localhost:5234/api/mtgdata/data').subscribe({
+        this.http.get<{message: string}>('http://localhost:5234/api/mtgdata/stringtest').subscribe({
             next: (response) => {
                 this.stringData = response.message
             },
@@ -42,6 +43,9 @@ export class MtgAnalysisComponent implements OnInit{
                 console.error('Error retrieving data from backend:', err);
             }
         })
+
+        //Add real data retrieval here
+
     }
 
 }
