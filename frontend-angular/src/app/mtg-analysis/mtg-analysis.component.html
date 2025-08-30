@@ -42,6 +42,14 @@
             </tr>
             </tbody>
         </table>
+        <div>
+            <h2>Player win counts</h2>
+            <ul>
+                <li *ngFor="let player of objectKeys(playerWinCount)">
+                    {{ player }}: {{ playerWinCount[player] }} wins
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
