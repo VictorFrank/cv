@@ -1,3 +1,56 @@
-<p>mtg-analysis works!</p>
+<div class="background">
+    <div class="headline">
+        <h1>MTG Data Analysis</h1>
+        <p>Analyze the data from previous games. More features coming soon!</p>
+    </div>
+    <div class="data-table">
+        <h2>Player stats</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Games Played</th>
+                    <th>Wins</th>
+                    <th>Win Rate (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of mockPlayerStats">
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.gamesPlayed }}</td>
+                    <td>{{ player.wins }}</td>
+                    <td>{{ player.winRate }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Commander stats</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Commander</th>
+                <th>Games Played</th>
+                <th>Wins</th>
+                <th>Win Rate (%)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let commander of mockCommanderStats">
+                <td>{{ commander.name }}</td>
+                <td>{{ commander.gamesPlayed }}</td>
+                <td>{{ commander.wins }}</td>
+                <td>{{ commander.winRate }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <h2>Player win counts</h2>
+            <ul>
+                <li *ngFor="let player of objectKeys(playerWinCount)">
+                    {{ player }}: {{ playerWinCount[player] }} wins
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <h1>String from backend: {{stringData}}</h1>

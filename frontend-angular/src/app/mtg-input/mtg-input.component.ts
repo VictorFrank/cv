@@ -50,7 +50,8 @@ export class MtgInputComponent {
 
         this.http.post('http://localhost:5234/api/mtgform/submit', this.mtgFormData).subscribe({
             next: (response) => {
-                console.log('Form data successfully sent to backend:', response);
+                alert('Form submitted successfully!');
+                window.location.reload();
             },
             error: (err) => {
                 console.error('Error sending form data to backend:', err);
