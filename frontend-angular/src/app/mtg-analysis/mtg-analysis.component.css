@@ -1,0 +1,56 @@
+/* Make the root host fill the viewport */
+:host {
+    display: block;
+    min-height: 100vh;       /* full viewport height */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container that holds all content and has the tiled background */
+.mtg-analysis {
+    width: 100%;
+    min-height: 100vh;       /* fill the viewport */
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* Darken only the background image */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* 50% dark overlay */
+        url('../../assets/badlands.jpg');                       /* your image */
+    background-repeat: repeat;        /* tile the image */
+    background-position: top left;
+    background-size: auto;            /* default tiling */
+}
+
+/* Make headline readable */
+.headline {
+    background-color: rgba(0,0,0,0.3);  /* semi-transparent overlay */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Make tables readable */
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0,0,0,0.3); /* semi-transparent table bg */
+    color: white;
+    margin-bottom: 20px;
+}
+
+.data-table th, .data-table td {
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: left;
+}
+
+/* Optional: lists readable */
+.data-table ul {
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}

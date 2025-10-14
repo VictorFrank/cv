@@ -1,0 +1,11 @@
+.match-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+
+    /* make the card background 30% opaque white */
+    background-color: rgba(249, 249, 249, 0.3);
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}

@@ -1,42 +1,149 @@
+/* Background layout */
 .background {
-    background-color: lightslategray;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: 'Arial', sans-serif;
-}
-
-.headline {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.formContainer {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #121212, #1e1e1e);
+    color: #f3f3f3;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
+/* Headline section */
+.headline {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.headline h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.headline p {
+    color: #aaaaaa;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Main form */
+.formContainer {
+    background: #1c1c1c;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    padding: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Player sections wrapper */
 .partContainer {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
+/* Individual player cards */
+.individualPlayerContainer {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 230px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.individualPlayerContainer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* Inputs and selects */
 .inputContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    gap: 10px;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
+label {
+    font-size: 0.9rem;
+    color: #cfcfcf;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    color: #f3f3f3;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #8ab4f8;
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
+    outline: none;
+}
+
+/* Checkbox groups */
+.individualPlayerContainer div:not(.inputContainer) {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+input[type="checkbox"] {
+    accent-color: #8ab4f8;
+    transform: scale(1.1);
+}
+
+/* Game info section */
+.partContainer:last-of-type {
+    justify-content: center;
+    border-top: 1px solid #333;
+    padding-top: 1.5rem;
+}
+
+/* Bottom button area */
 .inputBottom {
     display: flex;
-    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
     justify-content: center;
-    gap: 50px;
+}
+
+button {
+    background: #2d6cdf;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background: #3b7fff;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
