@@ -1,0 +1,19 @@
+<div class="match-card">
+    <h3>Match #{{ match.id }}</h3>
+    <p><strong>Date:</strong> {{ match.created_At }}</p>
+
+    <h4>Players</h4>
+    <ul>
+        <li>Player 1: {{ match.player1 }} (Commander: {{ match.commanderP1 }})</li>
+        <li>Player 2: {{ match.player2 }} (Commander: {{ match.commanderP2 }})</li>
+        <li>Player 3: {{ match.player3 }} (Commander: {{ match.commanderP3 }})</li>
+        <li>Player 4: {{ match.player4 }} (Commander: {{ match.commanderP4 }})</li>
+        <li>Player 5: {{ match.player5 }} (Commander: {{ match.commanderP5 }})</li>
+    </ul>
+
+    <p><strong>Starting Player:</strong> {{ match.startingPlayer }}</p>
+    <p><strong>First Blood:</strong> {{ match.fb }}</p>
+    <p><strong>First Death:</strong> {{ match.fDeath }}</p>
+    <p><strong>Game Time:</strong> {{ match.gametime }} minutes</p>
+    <p><strong>Winner:</strong> {{ match.win }} <span>({{ match.wMethod }})</span></p>
+</div>

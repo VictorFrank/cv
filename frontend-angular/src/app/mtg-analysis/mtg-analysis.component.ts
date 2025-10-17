@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {JsonPipe, NgForOf} from "@angular/common";
+import {MatchCardComponent} from "../matches/match-card/match-card.component";
 
 @Component({
   selector: 'app-mtg-analysis',
   standalone: true,
-    imports: [NgForOf, JsonPipe],
+    imports: [NgForOf, JsonPipe, MatchCardComponent],
   templateUrl: './mtg-analysis.component.html',
   styleUrl: './mtg-analysis.component.css'
 })
@@ -71,6 +72,12 @@ export class MtgAnalysisComponent implements OnInit{
                     this.playerWinCount[winner]++;
                 }
             }
+        }
+    }
+
+    showAllData() {
+        for (const match of this.mtgData) {
+            return match
         }
     }
 

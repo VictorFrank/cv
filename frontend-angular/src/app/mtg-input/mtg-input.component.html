@@ -6,77 +6,210 @@
     <form class="formContainer">
         <div class="inputContainer">
             <label for="playerNumber">Number of Players:</label>
-            <input type="number" id="playerNumber" [(ngModel)]="playerNumber" name="playerNumber" (ngModelChange)="handlePlayerNumberChange(playerNumber)" required>
+            <input type="number" id="playerNumber"
+                   [(ngModel)]="playerNumber" name="playerNumber"
+                   (ngModelChange)="handlePlayerNumberChange(playerNumber)"
+                   required min="2" max="5">
         </div>
         <div class="partContainer">
             <div class="individualPlayerContainer">
                 <div class="inputContainer">
                     <label for="player1">Player 1:</label>
-                    <input type="text" id="player1" [(ngModel)]="mtgFormData.player1" name="player1" required>
+                    <select id="player1" [(ngModel)]="mtgFormData.player1"
+                    name="player1" required>
+                        <option value="" disabled selected>Select Player</option>
+                        <option *ngFor="let player of players" [value]="player">{{ player }}</option>
+                    </select>
                 </div>
                 <div class="inputContainer">
                     <label for="commanderp1">Player 1 Commander:</label>
-                    <input type="text" id="commanderp1" [(ngModel)]="mtgFormData.commanderp1" name="commanderp1" required>
+                    <select id="commanderp1" [(ngModel)]="mtgFormData.commanderp1"
+                            name="commanderp1" required>
+                        <option value="" disabled selected>Select Commander</option>
+                        <option *ngFor="let commander of commanders" [value]="commander">{{ commander }}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="player1">Starting player</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="player1">First blood</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="winner1">Winner</label>
+                    <input
+                        type="checkbox" [disabled]="!mtgFormData.player1"
+                        id="winner1"
+                        [(ngModel)]="winnerStates.player1"
+                        name="winner1"
+                        (change)="onWinnerChange(mtgFormData.player1, $event)">
+                </div>
+                <div>
+                    <label for="player1">Knocked out first</label>
+                    <input type="checkbox">
                 </div>
             </div>
 
             <div class="individualPlayerContainer">
                 <div class="inputContainer">
                     <label for="player2">Player 2:</label>
-                    <input type="text" id="player2" [(ngModel)]="mtgFormData.player2" name="player2" required>
+                    <select id="player2" [(ngModel)]="mtgFormData.player2"
+                            name="player2" required>
+                        <option value="" disabled selected>Select Player</option>
+                        <option *ngFor="let player of players" [value]="player">{{ player }}</option>
+                    </select>
                 </div>
                 <div class="inputContainer">
                     <label for="commanderp2">Player 2 Commander:</label>
-                    <input type="text" id="commanderp2" [(ngModel)]="mtgFormData.commanderp2" name="commanderp2" required>
+                    <select id="commanderp2" [(ngModel)]="mtgFormData.commanderp2"
+                            name="commanderp2" required>
+                        <option value="" disabled selected>Select Commander</option>
+                        <option *ngFor="let commander of commanders" [value]="commander">{{ commander }}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="player1">Starting player</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="player1">First blood</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="winner2">Winner</label>
+                    <input
+                        type="checkbox" [disabled]="!mtgFormData.player2"
+                        id="winner2"
+                        [(ngModel)]="winnerStates.player2"
+                        name="winner2"
+                        (change)="onWinnerChange(mtgFormData.player2, $event)">
+                </div>
+                <div>
+                    <label for="player1">Knocked out first</label>
+                    <input type="checkbox">
                 </div>
             </div>
 
             <div class="individualPlayerContainer" *ngIf="playerNumber >= 3">
                 <div class="inputContainer">
                     <label for="player3">Player 3:</label>
-                    <input type="text" id="player3" [(ngModel)]="mtgFormData.player3" name="player3">
+                    <select id="player3" [(ngModel)]="mtgFormData.player3"
+                            name="player3">
+                        <option value="" disabled selected>Select Player</option>
+                        <option *ngFor="let player of players" [value]="player">{{ player }}</option>
+                    </select>
                 </div>
                 <div class="inputContainer">
                     <label for="commanderp3">Player 3 Commander:</label>
-                    <input type="text" id="commanderp3" [(ngModel)]="mtgFormData.commanderp3" name="commanderp3">
+                    <select id="commanderp3" [(ngModel)]="mtgFormData.commanderp3"
+                            name="commanderp3">
+                        <option value="" disabled selected>Select Commander</option>
+                        <option *ngFor="let commander of commanders" [value]="commander">{{ commander }}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="player1">Starting player</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="player1">First blood</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="winner3">Winner</label>
+                    <input
+                        type="checkbox" [disabled]="!mtgFormData.player3"
+                        id="winner3"
+                        [(ngModel)]="winnerStates.player3"
+                        name="winner3"
+                        (change)="onWinnerChange(mtgFormData.player3, $event)">
+                </div>
+                <div>
+                    <label for="player1">Knocked out first</label>
+                    <input type="checkbox">
                 </div>
             </div>
 
             <div class="individualPlayerContainer" *ngIf="playerNumber >= 4">
                 <div class="inputContainer">
                     <label for="player4">Player 4:</label>
-                    <input type="text" id="player4" [(ngModel)]="mtgFormData.player4" name="player4">
+                    <select id="player4" [(ngModel)]="mtgFormData.player4"
+                            name="player4">
+                        <option value="" disabled selected>Select Player</option>
+                        <option *ngFor="let player of players" [value]="player">{{ player }}</option>
+                    </select>
                 </div>
                 <div class="inputContainer">
                     <label for="commanderp4">Player 4 Commander:</label>
-                    <input type="text" id="commanderp4" [(ngModel)]="mtgFormData.commanderp4" name="commanderp4">
+                    <select id="commanderp4" [(ngModel)]="mtgFormData.commanderp4"
+                            name="commanderp4">
+                        <option value="" disabled selected>Select Commander</option>
+                        <option *ngFor="let commander of commanders" [value]="commander">{{ commander }}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="player1">Starting player</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="player1">First blood</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="winner4">Winner</label>
+                    <input
+                        type="checkbox" [disabled]="!mtgFormData.player4"
+                        id="winner4"
+                        [(ngModel)]="winnerStates.player4"
+                        name="winner4"
+                        (change)="onWinnerChange(mtgFormData.player4, $event)">
+                </div>
+                <div>
+                    <label for="player1">Knocked out first</label>
+                    <input type="checkbox">
                 </div>
             </div>
 
             <div class="individualPlayerContainer" *ngIf="playerNumber >= 5">
                 <div class="inputContainer">
                     <label for="player5">Player 5:</label>
-                    <input type="text" id="player5" [(ngModel)]="mtgFormData.player5" name="player5">
+                    <select id="player5" [(ngModel)]="mtgFormData.player5"
+                            name="player5">
+                        <option value="" disabled selected>Select Player</option>
+                        <option *ngFor="let player of players" [value]="player">{{ player }}</option>
+                    </select>
                 </div>
                 <div class="inputContainer">
                     <label for="commanderp5">Player 5 Commander:</label>
-                    <input type="text" id="commanderp5" [(ngModel)]="mtgFormData.commanderp5" name="commanderp5">
+                    <select id="commanderp5" [(ngModel)]="mtgFormData.commanderp5"
+                            name="commanderp5">
+                        <option value="" disabled selected>Select Commander</option>
+                        <option *ngFor="let commander of commanders" [value]="commander">{{ commander }}</option>
+                    </select>
                 </div>
-            </div>
-        </div>
-
-        <div class="partContainer">
-            <div class="inputContainer">
-                <label for="startingPlayer">Starting Player:</label>
-                <input type="text" id="startingPlayer" [(ngModel)]="mtgFormData.startingPlayer" name="startingPlayer">
-            </div>
-            <div class="inputContainer">
-                <label for="fb">First Blood:</label>
-                <input type="text" id="fb" [(ngModel)]="mtgFormData.fb" name="fb">
-            </div>
-            <div class="inputContainer">
-                <label for="fdeath">First Death:</label>
-                <input type="text" id="fdeath" [(ngModel)]="mtgFormData.fdeath" name="fdeath">
+                <div>
+                    <label for="player1">Starting player</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="player1">First blood</label>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <label for="winner5">Winner</label>
+                    <input
+                        type="checkbox" [disabled]="!mtgFormData.player5"
+                        id="winner5"
+                        [(ngModel)]="winnerStates.player5"
+                        name="winner5"
+                        (change)="onWinnerChange(mtgFormData.player5, $event)">
+                </div>
+                <div>
+                    <label for="player1">Knocked out first</label>
+                    <input type="checkbox">
+                </div>
             </div>
         </div>
 
@@ -84,10 +217,6 @@
             <div class="inputContainer">
                 <label for="gametime">Game Time:</label>
                 <input type="text" id="gametime" [(ngModel)]="mtgFormData.gametime" name="gametime">
-            </div>
-            <div class="inputContainer">
-                <label for="win">Winner:</label>
-                <input type="text" id="win" [(ngModel)]="mtgFormData.win" name="win">
             </div>
             <div class="inputContainer">
                 <label for="wmethod">Win Method:</label>

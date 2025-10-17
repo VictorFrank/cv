@@ -1,4 +1,4 @@
-<div class="background">
+<div class="mtg-analysis">
     <div class="headline">
         <h1>MTG Data Analysis</h1>
         <p>Analyze the data from previous games. More features coming soon!</p>
@@ -49,6 +49,17 @@
                     {{ player }}: {{ playerWinCount[player] }} wins
                 </li>
             </ul>
+        </div>
+        <div>
+            <h2>Match cards:</h2>
+            <div *ngFor="let match of mtgData">
+                <app-match-card [match]="match"></app-match-card>
+            </div>
+        </div>
+
+        <div>
+            <h2>All data for visibility:</h2>
+            <pre>{{ mtgData | json }}</pre>
         </div>
     </div>
 </div>
