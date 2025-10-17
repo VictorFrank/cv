@@ -27,5 +27,6 @@ namespace CvBackend.Models
         public string Gametime { get; set; } = string.Empty;
         public string Win { get; set; } = string.Empty;
         public string WMethod { get; set; } = string.Empty;
+		public string Format { get; set; } = string.Empty;
     }
 }

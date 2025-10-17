@@ -5,6 +5,14 @@
     </div>
     <form class="formContainer">
         <div class="inputContainer">
+            <label for="format">Format:</label>
+            <select id="format" [(ngModel)]="mtgFormData.format"
+                    name="format" required>
+                <option value="" disabled selected>Select Format</option>
+                <option *ngFor="let format of formats" [value]="format">{{ format }}</option>
+            </select>
+        </div>
+        <div class="inputContainer">
             <label for="playerNumber">Number of Players:</label>
             <input type="number" id="playerNumber"
                    [(ngModel)]="playerNumber" name="playerNumber"

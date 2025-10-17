@@ -32,7 +32,8 @@ export class MtgInputComponent {
         fdeath: string | null,
         gametime: string,
         win: string | null,
-        wmethod: string
+        wmethod: string,
+        format: string
     } = {
         player1: '',
         player2: '',
@@ -49,7 +50,8 @@ export class MtgInputComponent {
         fdeath: null,
         gametime: '',
         win: null,
-        wmethod: ''
+        wmethod: '',
+        format: ''
     }
 
     winnerStates = {
@@ -59,6 +61,16 @@ export class MtgInputComponent {
         player4: false,
         player5: false
     };
+
+    formats: string[] = [
+        'Commander',
+        'Modern',
+        'Standard',
+        'Pioneer',
+        'Legacy',
+        'Vintage',
+        'Draft',
+    ]
 
     players: string[] = [
         'Frank',
